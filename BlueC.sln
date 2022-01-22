@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueCLib", "BlueCLib\BlueCLib.csproj", "{3735816B-50A2-4879-B31E-1A2CE3FF09A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueCCli", "BlueCCli\BlueCCli.csproj", "{734B7476-4714-44B1-A152-7EAA7B6BBAB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3735816B-50A2-4879-B31E-1A2CE3FF09A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3735816B-50A2-4879-B31E-1A2CE3FF09A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3735816B-50A2-4879-B31E-1A2CE3FF09A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3735816B-50A2-4879-B31E-1A2CE3FF09A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{734B7476-4714-44B1-A152-7EAA7B6BBAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734B7476-4714-44B1-A152-7EAA7B6BBAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734B7476-4714-44B1-A152-7EAA7B6BBAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734B7476-4714-44B1-A152-7EAA7B6BBAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDF06A9A-434F-43F9-933E-77D4628A8BD9}
+	EndGlobalSection
+EndGlobal
