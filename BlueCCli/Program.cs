@@ -1,4 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using CliFx;
 
-Console.WriteLine("Hello, World!");
-
+await new CliApplicationBuilder()
+    .AddCommandsFromThisAssembly()
+    .Build()
+    .RunAsync();
