@@ -1,3 +1,5 @@
+using System;
+
 namespace BlueCLib.Models;
 
 public class Chatroom

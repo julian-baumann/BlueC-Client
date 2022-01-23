@@ -26,7 +26,7 @@ public class FirmwareClient : IFirmwareClient
         Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
 
-    private async Task<Message> GetMessagesAsync(string chatroomId)
+    public async Task<Message> GetMessagesAsync(string chatroomId)
     {
         Message message = null;
         HttpResponseMessage response = await Client.GetAsync(chatroomId);
@@ -37,22 +37,22 @@ public class FirmwareClient : IFirmwareClient
         return message;
     }
 
-    public async Task<Uri> SendMessageAsync(Message message)
+    public async Task<Uri> SendMessageAsync(Chatroom chatroom, Message message)
     {
-        HttpResponseMessage response = await Client.PostAsJsonAsync("api/messages", message);
+        HttpResponseMessage response = await Client.PostAsJsonAsync($"api/chatrooms/{chatroom}/message", message);
         response.EnsureSuccessStatusCode();
 
         return response.Headers.Location;
     }
     
-    private async Task<HttpStatusCode> DeleteMessageAsync (string id)
+    public async Task<HttpStatusCode> DeleteMessageAsync (Chatroom chatroom, string id)
     {
-        HttpResponseMessage response = await Client.DeleteAsync($"api/messages/{id}");
+        HttpResponseMessage response = await Client.DeleteAsync($"api/{chatroom}/messages/{id}");
         return response.StatusCode;
     }
 
 
-    private async Task<Contact> GetContactsAsync()
+    public async Task<Contact> GetContactsAsync()
     {
         Contact contact = null;
         HttpResponseMessage response = await Client.GetAsync("api/contacts");
@@ -64,7 +64,7 @@ public class FirmwareClient : IFirmwareClient
         return contact;
     }
     
-    private async Task<Uri> CreateContactAsync(Contact contact)
+    public async Task<Uri> CreateContactAsync(Contact contact)
     {
         HttpResponseMessage response = await Client.PostAsJsonAsync("api/contacts", contact);
         response.EnsureSuccessStatusCode();
@@ -72,7 +72,7 @@ public class FirmwareClient : IFirmwareClient
         return response.Headers.Location;
     }
 
-    private async Task<Contact> UpdateContactsAsync(Contact contact)
+    public async Task<Contact> UpdateContactsAsync(Contact contact)
     {
         HttpResponseMessage response = await Client.PutAsJsonAsync($"api/contacts/{contact.Id}", contact);
         response.EnsureSuccessStatusCode();
@@ -81,7 +81,7 @@ public class FirmwareClient : IFirmwareClient
         return contact;
     }
 
-    private async Task<HttpStatusCode> DeleteContactAsync(string id)
+    public async Task<HttpStatusCode> DeleteContactAsync(string id)
     {
         HttpResponseMessage response = await Client.DeleteAsync($"api/contacts/{id}");
         return response.StatusCode;
