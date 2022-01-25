@@ -12,10 +12,10 @@ public class CreateContact : ICommand
 {
     private readonly IFirmwareClient _firmwareClient;
     
-    public CreateContactCommand(IFirmwareClient firmwareClient)
-    {
-        _firmwareClient = firmwareClient;
-    }
+    //public CreateContactCommand(IFirmwareClient firmwareClient)
+    //{
+    //    _firmwareClient = firmwareClient;
+    //}
     
     [CommandParameter(0, Name = "UserId", Description = "User ID", IsRequired = true)]
     public string UserId { get; set; }
@@ -27,7 +27,7 @@ public class CreateContact : ICommand
     {
         var newContact = new Contact
         {
-            //Id = UserId
+            Id = UserId,
             Name = NewName
         };
 

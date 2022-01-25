@@ -41,6 +41,6 @@ public class SendCommand : ICommand
 
         await _firmwareClient.SendMessageAsync(chatroomId, message);
         
-        await console.Output.WriteAsync("Hello World " + Message);
+        await console.Output.WriteAsync("Hello World " + ChatroomId + Message);
     }
 }
